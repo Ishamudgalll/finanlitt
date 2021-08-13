@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
-url = 'https://github.com/Ishamudgalll/finanlitt/blob/main/High_Risk.csv'
-url1='https://github.com/Ishamudgalll/finanlitt/blob/main/Very_High_Risk.csv'
-url2='https://github.com/Ishamudgalll/finanlitt/blob/main/moderate_low_risk.csv'
+url = "https://res.cloudinary.com/do5emscz6/raw/upload/v1628865386/High_Risk_ygffwy.csv"
+url1='https://res.cloudinary.com/do5emscz6/raw/upload/v1628865449/Very_High_Risk_yhjpvu.csv'
+url2='https://res.cloudinary.com/do5emscz6/raw/upload/v1628865495/moderate_low_risk_qzxnvq.csv'
 
 high_risk = pd.read_csv(url,index_col='Scheme Name')
 
@@ -105,7 +105,7 @@ import pickle
 import math
 
 from flask import Flask, jsonify, request 
-
+#import FundReturn
 
 app = Flask(__name__) 
 
@@ -120,6 +120,7 @@ def home():
 def predict():
 	
     data = request.get_json(force=True)
+    
     json = list(data.values())
     dic=main1(json)
 
