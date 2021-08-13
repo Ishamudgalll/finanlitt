@@ -1,8 +1,13 @@
 import pandas as pd
 import numpy as np
-high_risk = pd.read_csv('High_risk.csv',index_col='Scheme Name')
-very_high_risk = pd.read_csv('very_high_risk.csv',index_col='Scheme Name')
-low_mod_risk = pd.read_csv('moderate_low_risk.csv',index_col='Scheme Name')
+url = 'https://github.com/Ishamudgalll/finanlitt/blob/main/High_Risk.csv'
+url1='https://github.com/Ishamudgalll/finanlitt/blob/main/Very_High_Risk.csv'
+url2='https://github.com/Ishamudgalll/finanlitt/blob/main/moderate_low_risk.csv'
+
+high_risk = pd.read_csv(url,index_col='Scheme Name')
+
+very_high_risk = pd.read_csv(url1,index_col='Scheme Name')
+low_mod_risk = pd.read_csv(url2,index_col='Scheme Name')
 high_risk.drop('Unnamed: 0',axis=1,inplace=True)
 very_high_risk.drop('Unnamed: 0',axis=1,inplace=True)
 low_mod_risk.drop('Unnamed: 0',axis=1,inplace=True)
