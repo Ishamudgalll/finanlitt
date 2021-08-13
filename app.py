@@ -84,21 +84,13 @@ def main1(listr):
     time=time*12
     if(idcw_growth=='idcw'):
         p = portfolio(xc_idcw,xc1_idcw,xc2_idcw,risk,sip,time)
-        dic={}
-        dic['Total Returns ']=p[0]
-        dic['Total Investment ']=sip*time
-        dic[p[4]]=p[1]
-        dic[p[5]]=p[2]
-        dic[p[6]]=p[3]
+        dit = {'smallcap': {'name': p[5], 'percent': p[2]}, 'largecap': {'name': p[4], 'percent': p[1]},
+           'debt': {'name': p[6], 'percent': p[3]}, 'amountinvested': sip * time, 'return': p[0]}
     else:
         p = portfolio(xc_growth,xc1_growth,xc2_growth,risk,sip,time)
-        dic={}
-        dic['Total Returns ']=p[0]
-        dic['Total Investment ']=sip*time
-        dic[p[4]]=p[1]
-        dic[p[5]]=p[2]
-        dic[p[6]]=p[3]
-    return dic        
+        dit = {'smallcap': {'name': p[5], 'percent': p[2]}, 'largecap': {'name': p[4], 'percent': p[1]},
+           'debt': {'name': p[6], 'percent': p[3]}, 'amountinvested': sip * time, 'return': p[0]}
+    return dit        
     
 import numpy as np
 import pickle
@@ -129,4 +121,4 @@ def predict():
  
 if __name__ == '__main__': 
 
-	app.run(debug = True)    
+	app.run(debug = True)  
